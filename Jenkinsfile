@@ -3,13 +3,18 @@ pipeline {
 
   triggers{
     githubPush()
-    cron('H/5 * * * *')
   }
 
   stages {
-    stage('Build') {
+
+    stage('build'){
       steps {
-        echo 'Build triggered by Github or cron scehdule'
+        echo 'Building the application'
+      }
+    }
+    stage('Deploy') {
+      steps{
+        echo 'Deploying the application'
       }
     }
   }
